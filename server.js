@@ -9,7 +9,7 @@ const multer = require('multer');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect('mongodb://localhost:27017/baza', {
+mongoose.connect('mongodb+srv://filipcindric11:mongo123@cluster0.e9cx6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
