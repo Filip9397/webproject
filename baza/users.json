@@ -1,0 +1,4 @@
+[
+    { "_id": 1, "role": "administrator", "ime": "Ime1", "prezime": "Prezime1", "datum_rodjenja": "1990-01-01", "korime": "admin1", "lozinka": "admin1pass" },
+    { "_id": 2, "role": "prijavljeniKorisnik", "ime": "Ime2", "prezime": "Prezime2", "datum_rodjenja": "1995-05-15", "korime": "user1", "lozinka": "user1pass" }
+  ]

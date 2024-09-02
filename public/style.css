@@ -1,0 +1,636 @@
+h2 {
+  color: #333;
+}
+
+#loginForm {
+  width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#registerForm {
+  width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+
+/*općenito na stranici*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: linear-gradient(to right, #1d8348, #186a3b); /* Tamnija zelena pozadinska gradijentna boja */
+  color: #ffffff; /* Bijela boja teksta */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo-container img {
+  width: 50px;
+  height: auto;
+}
+
+.title-container h1 {
+  margin: 0;
+  font-weight: bold; /* Deblji naslov */
+  font-size: 24px; /* Prilagodite veličinu prema potrebi */
+}
+
+.menu-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-container li {
+  margin-right: 20px;
+}
+
+.menu-container a {
+  text-decoration: none;
+  color: #ffffff; /* Bijela boja linkova */
+  font-weight: bold;
+}
+@media only screen and (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stavljanje elemenata jedan ispod drugoga na manjim ekranima */
+    text-align: center; /* Centriranje teksta na manjim ekranima */
+    padding: 10px;
+  }
+
+  .menu-container {
+    margin-top: 10px; /* Dodavanje razmaka iznad izbornika na manjim ekranima */
+  }
+
+  .menu-container ul {
+    flex-direction: column; /* Postavljanje izbornika u stupac na manjim ekranima */
+    align-items: center; /* Centriranje stavki izbornika */
+  }
+
+  .menu-container li {
+    margin-right: 0; /* Uklanjanje desnog razmaka između stavki izbornika na manjim ekranima */
+    margin-bottom: 10px; /* Dodavanje razmaka između stavki izbornika u stupcu */
+  }
+}
+footer {
+  background: linear-gradient(to right, #1d8348, #186a3b);; /* Zelena boja s prozirnošću */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+img {
+  width: 150px; /* Prilagodite veličinu prema potrebi */
+  border-radius: 50%;
+}
+
+.contact-info, .center-content, .sponsors-container {
+  flex: 1;
+  padding: 0 10px; /* Da se riješi dodatni prostor između crte i teksta */
+  text-align: center;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+a {
+  color: #fff;
+}
+
+.divider {
+  border-top: 2px solid #fff; /* Vodoravna crta */
+  width: 100%;
+  margin: 20px 0; /* Razmak između crte i teksta */
+}
+
+.sponsors {
+  text-align: center; /* Središnje poravnanje naslova "Naši partneri" */
+  opacity: 0.8; /* Prozirnost */
+  margin-top: 20px; /* Prilagodite razmak prema potrebi */
+}
+
+.sponsors h2 {
+  margin-bottom: 10px; /* Prilagodite razmak prema potrebi */
+}
+
+.sponsors img {
+  max-width: 100%; /* Da se prilagodi veličina slike unutar containera */
+  margin-bottom: 10px; /* Prilagodite razmak prema potrebi */
+}
+@media only screen and (max-width: 768px) {
+  footer {
+    padding: 15px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  img {
+    width: 120px; /* Prilagodite veličinu prema potrebi na manjim ekranima */
+  }
+
+  .contact-info, .center-content, .sponsors-container {
+    padding: 0; /* Uklanjanje dodatnog prostora između elemenata na manjim ekranima */
+  }
+
+  .contact-info p {
+    margin: 3px 0;
+    font-size: 12px; /* Prilagodite veličinu teksta na manjim ekranima */
+  }
+
+  .divider {
+    margin: 10px 0; /* Prilagodite razmak između crte i teksta na manjim ekranima */
+  }
+
+  .sponsors {
+    margin-top: 10px; /* Prilagodite razmak između "Naši partneri" i sponzora na manjim ekranima */
+  }
+
+  .sponsors h2 {
+    margin-bottom: 5px; /* Prilagodite razmak između naslova "Naši partneri" i sponzora na manjim ekranima */
+  }
+
+  .sponsors img {
+    margin-bottom: 5px; /* Prilagodite razmak između sponzora na manjim ekranima */
+  }
+}
+/* Utakmice */
+#utakmice-container {
+  display: flex;
+  flex-wrap: wrap; /* Promijenjeno na "wrap" kako bi kontejneri bili jedan ispod drugog */
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.utakmica {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease-in-out;
+  /* Uklonjeno flex svojstvo kako bi svaki skup podataka bio jedan ispod drugog */
+}
+
+.utakmica:hover {
+  transform: scale(1.05);
+}
+
+.utakmica p {
+  margin: 0;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.utakmica p:first-child {
+  font-weight: bold;
+}
+
+/* Dodani stilovi za nazive domaćih i gostujućih ekipa */
+.utakmica .timovi {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Različite boje za parne i neparne retke */
+.utakmica p:nth-child(odd) {
+  background-color: #e9ecef;
+}
+
+.utakmica p:nth-child(even) {
+  background-color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+  #utakmice-container {
+    justify-content: center; /* Centriranje elemenata na manjim ekranima */
+    margin: 10px; /* Smanjenje margina na manjim ekranima */
+  }
+
+  .utakmica {
+    width: 100%; /* Prikazivanje svake utakmice na cijeloj širini ekrana na manjim ekranima */
+  }
+}
+
+/*početna stranica slike*/
+.main-image {
+  margin: 20px; /* Dodajte marginu po potrebi */
+  text-align: center; /* Centrirajte sliku */
+  padding: 20px; /* Dodajte određeni padding po potrebi */
+ 
+}
+
+.main-image img {
+  width: 100%;
+  max-width: 1200px; /* Povećajte maksimalnu širinu prema potrebi */
+  height: auto; /* Očuvajte omjer širine i visine */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px; /* Dodajte određeni padding po potrebi */
+}
+
+
+.image-gallery img {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.1);
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif; /* Zamijenite 'Your Special Font' sa stvarnim nazivom fonta koji želite koristiti */
+  color:#1d8348 ; /* Moderna boja, možete promijeniti prema vašim željama */
+  text-align: center;
+  margin-top: 2vh; /* Prilagodite visinu margine prema potrebi */
+  transform: translateY(-50%);
+  letter-spacing: 2px;
+  padding: 10px;
+}
+
+.pozadina {
+  background-color: #f2f2f2; /* Postavite boju pozadine prema želji */
+}
+
+/* OBAVIJESTI */
+#obavijesti-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column; /* Postavljanje na column kako bi bile jedna ispod druge */
+  margin: 20px;
+}
+
+.obavijest {
+  background-color: rgba(24, 106, 59, 0.4); /* Boja s određenom prozirnošću */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 15px;
+  width: 100%; /* 33.33% širine s razmakom između elemenata */
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.obavijest:hover {
+  transform: scale(1.05);
+}
+
+.obavijest p {
+  margin: 0;
+  padding: 8px 0;
+}
+
+.obavijest .naslov {
+  font-weight: bold;
+  font-size: 1.5em; /* Povećajte veličinu naslova */
+  color: #fff; /* Bijela boja teksta */
+  text-transform: uppercase; /* Pretvori tekst naslova u uppercase */
+  letter-spacing: 2px; /* Razmak između slova */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sjena teksta */
+}
+
+.obavijest .tekst {
+  color: #fff; /* Bijela boja teksta */
+}
+
+.obavijest .datum-autor {
+  font-size: 0.8em;
+  color: #fff; /* Bijela boja teksta */
+}
+@media only screen and (max-width: 768px) {
+  #obavijesti-container {
+    align-items: center; /* Centriranje elemenata na manjim ekranima */
+  }
+
+  .obavijest {
+    width: 100%; /* Prikazivanje svake obavijesti na cijeloj širini ekrana na manjim ekranima */
+  }
+  
+  .obavijest .naslov {
+    font-size: 1.2em; /* Smanjite veličinu naslova na manjim ekranima */
+  }
+
+  .obavijest .datum-autor {
+    font-size: 0.7em; /* Smanjite veličinu datuma i autora na manjim ekranima */
+  }
+}
+/*momcad*/
+#momcad-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.igrac {
+  position: relative;
+  width: 200px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.igrac img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.igrac::before,
+.igrac::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.igrac::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+}
+
+.igrac::after {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 2;
+}
+
+.igrac:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.igrac:hover img {
+  transform: translateY(-5%);
+}
+
+.igrac p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  margin: 8px 0;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255); /* Promijenite boju po želji */
+  letter-spacing: 1px;
+  transition: color 0.1s ease-in-out;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 2); /* Dodajte blagi tekstni sjaj */
+  top: 50%;
+  left: 50%;
+  transform: translate(20%, 20%);
+
+}
+
+.igrac:hover p {
+  color:#2ecc71;
+}
+
+.igrac:hover::before,
+.igrac:hover::after {
+  opacity: 0;
+}
+@media only screen and (max-width: 768px) {
+  #momcad-container {
+    justify-content: center; /* Centriranje elemenata na manjim ekranima */
+  }
+
+  .igrac {
+    width: 100%; /* Prikazivanje svakog igrača na cijeloj širini ekrana na manjim ekranima */
+    margin: 5px 0; /* Smanjenje margina na manjim ekranima */
+  }
+
+  .igrac img {
+    border-radius: 8px; /* Ponovno postavljanje border-radius-a na sliku */
+  }
+
+  .igrac p {
+    font-size: 14px; /* Smanjenje veličine teksta na manjim ekranima */
+  }
+}
+/*treninzi*/
+#plan-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trening {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  max-width: 100%; /* Da okvir bude širi */
+  transition: transform 0.3s ease-in-out;
+}
+
+.trening:hover {
+  transform: scale(1.05);
+}
+
+.trening p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 8px 0;
+  color: #333;
+}
+
+.trening p:first-child {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.trening p:nth-child(2),
+.trening p:nth-child(3),
+.trening p:nth-child(4) {
+  font-weight: bold;
+}
+
+.trening p:last-child {
+  font-style: italic;
+  color: #777;
+}
+@media only screen and (max-width: 768px) {
+  #plan-container {
+    justify-content: center; /* Centriranje elemenata na manjim ekranima */
+  }
+
+  .trening {
+    max-width: 100%; /* Prikazivanje svakog treninga na cijeloj širini ekrana na manjim ekranima */
+    margin: 10px 0; /* Smanjenje margina na manjim ekranima */
+  }
+
+  .trening p {
+    font-size: 14px; /* Smanjenje veličine teksta na manjim ekranima */
+    line-height: 1.4; /* Smanjenje visine reda teksta na manjim ekranima */
+  }
+
+  .trening p:first-child {
+    font-size: 18px; /* Smanjenje veličine naslova na manjim ekranima */
+    margin-bottom: 5px; /* Smanjenje razmaka ispod naslova na manjim ekranima */
+  }
+}
+
+/*about*/
+section {
+  max-width: 100%; /* Promijenjeno sa 800px na 100% */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+
+h4 {
+  color: #333;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+p {
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  /* Povećajte maksimalnu širinu slika */
+  max-width: 1000px;
+}
+
+section img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* Postavite željenu veličinu slika */
+  width: 100%; /* Primjer: slike će zauzeti 100% širine sekcije */
+}
+
+/* Ako želite povećati veličinu teksta unutar sekcija */
+section l {
+  font-size: 18px; /* Primjer: postavite željenu veličinu fonta */
+}
+/* Responzivnost za smanjenje margina na manjim ekranima */
+@media only screen and (max-width: 600px) {
+  section {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Stilizacija pojedinačne slike */
+.slika-container {
+  margin: 10px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  transition: transform 0.3s;
+}
+
+.slika-container:hover {
+  transform: scale(1.05); /* Povećava sliku malo na hover */
+}
+
+.slika-container img {
+  max-width: 100%; /* Maksimalna širina slike */
+  max-height: 200px; /* Maksimalna visina slike */
+  width: auto; /* Održava odnos širine i visine */
+  height: auto; /* Održava odnos širine i visine */
+  border-radius: 4px; /* Dodatni stil za zaobljeni ugao slike */
+}
+
+.slika-container p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}

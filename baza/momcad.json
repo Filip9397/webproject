@@ -1,0 +1,22 @@
+[
+{ "id": 1, "ime": "Alen", "prezime": "Leist", "datum_rodenja": "18.08.1990.", "pozicija": "vratar" },
+{ "id": 2, "ime": "Alen", "prezime": "Vlaić", "datum_rodenja": "31.07.2004.", "pozicija": "vratar" },
+{ "id": 3, "ime": "Ivica", "prezime": "Kovačević", "datum_rodenja": "24.08.1985.", "pozicija": "obrambeni" },
+{ "id": 4, "ime": "Marko", "prezime": "Ralašić", "datum_rodenja": "05.04.1999.", "pozicija": "obrambeni" },
+{ "id": 5, "ime": "Petar", "prezime": "Mulc", "datum_rodenja": "29.12.2003.", "pozicija": "obrambeni" },
+{ "id": 6, "ime": "Ivan", "prezime": "Kašljević", "datum_rodenja": "06.02.1988.", "pozicija": "obrambeni" },
+{ "id": 7, "ime": "Valentino", "prezime": "Podobnik", "datum_rodenja": "18.11.1989.", "pozicija": "obrambeni" },
+{ "id": 8, "ime": "Marin", "prezime": "Petričević", "datum_rodenja": "31.08.2004.", "pozicija": "obrambeni" },
+{ "id": 9, "ime": "Karlo", "prezime": "Grgić", "datum_rodenja": "08.08.1999.", "pozicija": "vezni" },
+{ "id": 10, "ime": "Stjepan", "prezime": "Dravec", "datum_rodenja": "29.03.2003.", "pozicija": "vezni" },
+{ "id": 11, "ime": "Karlo", "prezime": "Pavlović", "datum_rodenja": "01.01.2003.", "pozicija": "vezni" },
+{ "id": 12, "ime": "Krunoslav", "prezime": "Dubravac", "datum_rodenja": "12.07.1993.", "pozicija": "vezni" },
+{ "id": 13, "ime": "Nemanja", "prezime": "Prodanović", "datum_rodenja": "12.03.1992.", "pozicija": "vezni" },
+{ "id": 14, "ime": "Ivan", "prezime": "Blatančić", "datum_rodenja": "14.01.1998.", "pozicija": "vezni" },
+{ "id": 15, "ime": "Marin", "prezime": "Čikardić", "datum_rodenja": "30.03.2004.", "pozicija": "vezni" },
+{ "id": 16, "ime": "Vlado", "prezime": "Lasić", "datum_rodenja": "13.12.1997.", "pozicija": "napadač" },
+{ "id": 17, "ime": "Dragan", "prezime": "Sremac", "datum_rodenja": "20.10.1994.", "pozicija": "napadač" },
+{ "id": 18, "ime": "Hrvoje", "prezime": "Mišić", "datum_rodenja": "17.08.1987.", "pozicija": "napadač" },
+{ "id": 19, "ime": "Mateo", "prezime": "Poljac", "datum_rodenja": "17.09.2005.", "pozicija": "napadač" },
+{ "id": 20, "ime": "Josip", "prezime": "Gospočić", "datum_rodenja": "04.05.1999.", "pozicija": "napadač" }
+]

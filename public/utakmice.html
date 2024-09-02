@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspored utakmica</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(async () => {
+            try {
+                const response = await fetch('/utakmice/popis-utakmica');
+                const utakmice = await response.json();
+    
+                console.log('Dohvaćeni podaci o utakmicama:', utakmice);
+    
+                const utakmiceContainer = $('#utakmice-container');
+    
+                if (utakmiceContainer.length) {
+                    $.each(utakmice, (index, utakmica) => {
+                        const utakmicaElement = $('<div>').addClass('utakmica');
+    
+                        $('<p>').addClass('timovi').text(`${utakmica.domaći} vs ${utakmica.gosti}`).appendTo(utakmicaElement);
+                        
+                        $('<p>').text(`${utakmica.Datum_vrijeme_utakmice}`).appendTo(utakmicaElement);
+                        $('<p>').text(`${utakmica.mjesto}`).appendTo(utakmicaElement);
+                        $('<p>').text(`${utakmica.kolo}`).appendTo(utakmicaElement);
+    
+                        utakmiceContainer.append(utakmicaElement);
+                    });
+                }
+            } catch (error) {
+                console.error('Greška prilikom dohvaćanja utakmica:', error);
+            }
+        });
+    </script>
+    
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/materijali/grb.png" alt="grb"/>
+        </div>
+        <div class="title-container">
+            <h1>Nogometni klub Slavonac Nova Kapela Official website</h1>
+        </div>
+        <div class="menu-container">
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="prijava.html">Prijava</a></li>
+                <li><a href="registracija.html">Registracija</a></li>
+                <li><a href="obavijesti.html">Obavijesti</a></li>
+                <li><a href="momcad.html">Seniori</a></li>
+                <li><a href="plan.html">Treninzi</a></li>
+                <li><a href="about.html">O nama</a></li>
+            </ul>
+        </div>
+    </header>
+    <h3>Raspored utakmica</h3>
+    <div id="utakmice-container"> </div>
+
+    <footer>
+        <div class="contact-info">
+            <p>Trg kralja Tomislava 9, Nova Kapela, 35410 Nova Kapela</p>
+            <p>Telefon: 035/384-217</p>
+            <p><a href="mailto:nkslavonac.novakapela@gmail.com">nkslavonac.novakapela@gmail.com</a></p>
+            <p>Radno vrijeme: 7-15</p>
+        </div>
+        <div class="divider"></div> 
+        <div class="center-content">
+            <p>&copy; 2024 NK Slavonac</p>
+            <img src="/materijali/grb.png" alt="grb" />
+        </div>
+        <div class="divider"></div> 
+        <div class="sponsors-container">
+            <div class="sponsors">
+                <h2>Naši partneri</h2>
+                <img src="/materijali/metaloplast.png" alt="Sponzor 1">
+                <img src="/materijali/nike.png" alt="Sponzor 2">
+                <img src="/materijali/općina.gif" alt="Sponzor 3">
+                <img src="/materijali/prvca.png" alt="Sponzor 4">
+                <img src="/materijali/seklo.png" alt="Sponzor 5">
+                <img src="/materijali/zubovic.png" alt="Sponzor 6">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

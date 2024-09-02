@@ -1,0 +1,15 @@
+[
+    { "_id": 1, "Datum_vrijeme_utakmice": "10.03.2024., 15:00", "mjesto": "Jakšić", "kolo": "14. kolo", "domaći": "Jakšić", "gosti": "Slavonac"},
+    { "_id": 2, "Datum_vrijeme_utakmice": "16.03.2024., 15:30", "mjesto": "Nova Kapela", "kolo": "15. kolo", "domaći": "Slavonac", "gosti": "Sikirevci"},
+    { "_id": 3, "Datum_vrijeme_utakmice": "23.03.2024., 15:30", "mjesto": "Lipik", "kolo": "16. kolo", "domaći": "Lipik", "gosti": "Slavonac"},
+    { "_id": 4, "Datum_vrijeme_utakmice": "30.03.2024., 18:00", "mjesto": "Nova Kapela", "kolo": "17. kolo", "domaći": "Slavonac", "gosti": "Vinogorac"},
+    { "_id": 5, "Datum_vrijeme_utakmice": "07.04.2024., 16:45", "mjesto": "Sibinj", "kolo": "18. kolo", "domaći": "Mladost", "gosti": "Slavonac"},
+    { "_id": 6, "Datum_vrijeme_utakmice": "13.04.2024., 19:30", "mjesto": "Nova Kapela", "kolo": "19. kolo", "domaći": "Slavonac", "gosti": "Požega"},
+    { "_id": 7, "Datum_vrijeme_utakmice": "21.04.2024., 17:15", "mjesto": "Velika", "kolo": "20. kolo", "domaći": "Papuk", "gosti": "Slavonac"},
+    { "_id": 8, "Datum_vrijeme_utakmice": "28.04.2024., 17:15", "mjesto": "Oprisavci", "kolo": "21. kolo", "domaći": "Zadrugar", "gosti": "Slavonac"},
+    { "_id": 9, "Datum_vrijeme_utakmice": "04.05.2024., 20:15", "mjesto": "Nova Kapela", "kolo": "22. kolo", "domaći": "Slavonac", "gosti": "Hajduk"},
+    { "_id": 10, "Datum_vrijeme_utakmice": "12.05.2024., 17:30", "mjesto": "Vidovci", "kolo": "23. kolo", "domaći": "Dinamo", "gosti": "Slavonac"},
+    { "_id": 11, "Datum_vrijeme_utakmice": "18.05.2024., 20:30", "mjesto": "Nova Kapela", "kolo": "24. kolo", "domaći": "Slavonac", "gosti": "Psunj Sokol"},
+    { "_id": 12, "Datum_vrijeme_utakmice": "26.05.2024., 18:00", "mjesto": "Slobodnica", "kolo": "25. kolo", "domaći": "Slobodnica", "gosti": "Slavonac"},
+    { "_id": 13, "Datum_vrijeme_utakmice": "01.06.2024., 20:45", "mjesto": "Nova Kapela", "kolo": "26. kolo", "domaći": "Slavonac", "gosti": "Omladinac"}
+]

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seniori</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function prikaziIgrace(igraci) {
+            const momcadContainer = $('#momcad-container');
+
+            if (momcadContainer.length) {
+                const slikeMapa = {
+                    1: 'leist.jpeg',
+                    2: 'vlaic.jpeg',
+                    3: 'kovacevic.jpeg',
+                    4: 'ralašić.jpeg',
+                    5: 'mulc.jpeg',
+                    6: 'kasljevic.jpeg',
+                    7: 'podobnik.jpeg',
+                    8: 'petricevic.jpeg',
+                    9: 'grgić.jpeg',
+                    10: 'dravec.jpeg',
+                    11: 'pavlovic1.jpeg',
+                    12: 'dubravac.jpeg',
+                    13: 'prodanovic.jpeg',
+                    14: 'blatancic1.jpeg',
+                    15: 'cikardic.jpeg',
+                    16: 'lasic.jpeg',
+                    17: 'sremac.jpeg',
+                    18: 'misic.jpeg',
+                    19: 'poljac.jpeg',
+                    20: 'gospočić.jpeg',
+                };
+
+                igraci.forEach(igrac => {
+                    const igracElement = $('<div>').addClass('igrac');
+                    $('<p>').text(`${igrac.ime}`).appendTo(igracElement);
+                    $('<p>').text(`${igrac.prezime}`).appendTo(igracElement);
+                    $('<p>').text(`${igrac.datum_rodenja}`).appendTo(igracElement);
+                    $('<p>').text(`${igrac.pozicija}`).appendTo(igracElement);
+
+                    if (igrac.id in slikeMapa) {
+                        $('<img>').attr('src', `/materijali/${slikeMapa[igrac.id]}`).appendTo(igracElement);
+                    }
+
+                    momcadContainer.append(igracElement);
+                });
+            }
+        }
+
+        $(document).ready(async () => {
+            try {
+                const response = await fetch('/momcad');
+                const igraci = await response.json();
+                prikaziIgrace(igraci);
+            } catch (error) {
+                console.error('Greška prilikom dohvaćanja igrača:', error);
+            }
+        });
+    </script>
+</head>
+<body>
+        <header>
+            <div class="logo-container">
+                <img src="/materijali/grb.png" alt="grb"/>
+            </div>
+            <div class="title-container">
+                <h1>Nogometni klub Slavonac Nova Kapela Official website</h1>
+            </div>
+            <div class="menu-container">
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="prijava.html">Prijava</a></li>
+                <li><a href="registracija.html">Registracija</a></li>
+                <li><a href="utakmice.html">Utakmice</a></li>
+                <li><a href="obavijesti.html">Obavijesti</a></li>
+                <li><a href="plan.html">Treninzi</a></li>
+                <li><a href="about.html">O nama</a></li>  
+                </ul>
+            </div>
+        </header>
+    
+    </header>
+    <h3>Naši seniori </h3>
+    <div id="momcad-container"> </div>
+    <footer>
+        <div class="contact-info">
+            <p>Trg kralja Tomislava 9, Nova Kapela, 35410 Nova Kapela</p>
+            <p>Telefon: 035/384-217</p>
+            <p><a href="mailto:nkslavonac.novakapela@gmail.com">nkslavonac.novakapela@gmail.com</a></p>
+            <p>Radno vrijeme: 7-15</p>
+        </div>
+        <div class="divider"></div> 
+        <div class="center-content">
+            <p>&copy; 2024 NK Slavonac</p>
+            <img src="/materijali/grb.png" alt="grb" />
+        </div>
+        <div class="divider"></div> 
+        <div class="sponsors-container">
+            <div class="sponsors">
+                <h2>Naši partneri</h2>
+                <img src="/materijali/metaloplast.png" alt="Sponzor 1">
+                <img src="/materijali/nike.png" alt="Sponzor 2">
+                <img src="/materijali/općina.gif" alt="Sponzor 3">
+                <img src="/materijali/prvca.png" alt="Sponzor 4">
+                <img src="/materijali/seklo.png" alt="Sponzor 5">
+                <img src="/materijali/zubovic.png" alt="Sponzor 6">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
