@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const multer = require('multer'); 
+const tinify = require("tinify");
+tinify.key = "0qKGbkrZSd3vYHpvM3Rr55FbJYwSRxD0";
 
 
 const app = express();
@@ -256,7 +258,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-app.post('/upload', upload.single('image'), (req, res) => {
+function spremismanjenusliku (req, res, next){
+  const source = tinify.fromFile(req.file.path);
+  source.toFile(path.join(req.file.destination, "minislike", req.file.filename));
+  next()
+}
+
+app.post('/upload', upload.single('image'), spremismanjenusliku, (req, res) => {
   res.redirect('preuzmi_postavi.html');
 });
 
@@ -268,7 +276,7 @@ app.get('/download', (req, res) => {
 const fs = require('fs');
 
 app.get('/slike', (req, res) => {
-  const direktorijum = path.join(__dirname, 'materijali');
+  const direktorijum = path.join(__dirname, 'materijali', "minislike");
 
   fs.readdir(direktorijum, (err, datoteke) => {
     if (err) {
