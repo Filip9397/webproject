@@ -262,7 +262,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
 
 app.get('/download', (req, res) => {
   const filename = req.query.filename; 
-  res.sendFile(path.join(__dirname, 'materijali', filename));
+  res.set("Content-Disposition", "attachment; filename=" +filename).sendFile(path.join(__dirname, 'materijali', filename));
 });
 
 const fs = require('fs');
