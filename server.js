@@ -45,7 +45,7 @@ const Korisnik = mongoose.model('Korisnik', {
 
 const secretKey = 'mySecretKey'; 
 app.get('/prijava', (req, res) => {
-  res.sendFile(path.join(__dirname, 'prijava.html'));
+  res.sendFile(path.join(__dirname, '/public/prijava.html'));
 });
 
 app.post('/prijava', async (req, res) => {
@@ -58,7 +58,7 @@ app.post('/prijava', async (req, res) => {
     const korisnik = await Korisnik.findOne({ korime: { $regex: new RegExp(username, 'i') } });
 
     if (korisnik && korisnik.lozinka === password) {
-      res.redirect('/index.html');
+      res.send("Uspješno ste prijavljeni!");
     } else {
       res.status(401).json({error: 'Pogrešno korisničko ime ili lozinka. Pokušajte ponovo.' });
     }
@@ -91,7 +91,7 @@ app.post('/registracija', async (req, res) => {
       });
 
       await noviKorisnik.save();
-      res.send('Korisnik uspešno registrovan.');
+      res.send("Korisnik uspješno registriran");
   } catch (err) {
       console.error('Greška prilikom registracije korisnika:', err);
       res.status(500).send(err.message || 'Internal Server Error');

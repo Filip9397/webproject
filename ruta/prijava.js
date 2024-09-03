@@ -15,7 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify({ username, password }),
         });
   
-        const result = await response.text();
-        document.getElementById('result').innerHTML = result;
+        if (!response.ok){
+            const rezultat = await response.text();
+            alert(rezultat); 
+        }
+        else{
+            window.location.href="/";
+        }
     });
   });

@@ -24,9 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     lozinka
                 })
             });
+            if (!odgovor.ok){
+                const rezultat = await odgovor.text();
+                alert(rezultat); 
+            }
+            else{
+                window.location.href="/prijava";
+            }
 
-            const rezultat = await odgovor.text();
-            alert(rezultat); 
+           
         } catch (error) {
             console.error('Greška prilikom registracije:', error);
         }
