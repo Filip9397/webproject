@@ -259,13 +259,26 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+function provjeritoken (req, res, next){
+  try
+  {
+  const token = req.headers.authorization.slice(7);
+  jwt.verify(token, secretKey);
+  next()
+  }
+  catch(error){ 
+    console.log("Neautorizirani korisnik je pokušao prenijeti fotografiju");
+    res.sendStatus(401);
+  }
+}
+
 function spremismanjenusliku (req, res, next){
   const source = tinify.fromFile(req.file.path);
   source.toFile(path.join(req.file.destination, "minislike", req.file.filename));
   next()
 }
 
-app.post('/upload', upload.single('image'), spremismanjenusliku, (req, res) => {
+app.post('/upload', provjeritoken, upload.single('image'), spremismanjenusliku, (req, res) => {
   res.redirect('preuzmi_postavi.html');
 });
 
@@ -275,6 +288,7 @@ app.get('/download', (req, res) => {
 });
 
 const fs = require('fs');
+const { error } = require('console');
 
 app.get('/slike', (req, res) => {
   const direktorijum = path.join(__dirname, 'materijali', "minislike");

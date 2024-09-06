@@ -9,10 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         formData.append('image', fileInput.files[0]);
 
+        const token = localStorage.getItem("token");
 
         await fetch('/upload', {
             method: 'POST',
             headers: {
+                "Authorization": "Bearer " +token,
                // 'Content-Type': 'application/json', 
             },
             body: formData,
