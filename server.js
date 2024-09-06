@@ -58,7 +58,8 @@ app.post('/prijava', async (req, res) => {
     const korisnik = await Korisnik.findOne({ korime: { $regex: new RegExp(username, 'i') } });
 
     if (korisnik && korisnik.lozinka === password) {
-      res.send("Uspješno ste prijavljeni!");
+      const token = jwt.sign ({username:username}, secretKey);
+      res.send(token);
     } else {
       res.status(401).json({error: 'Pogrešno korisničko ime ili lozinka. Pokušajte ponovo.' });
     }

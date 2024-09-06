@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
             alert(rezultat); 
         }
         else{
+            const token = await response.text();
+            localStorage.setItem("token", token);
             window.location.href="/";
         }
     });
