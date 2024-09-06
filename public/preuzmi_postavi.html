@@ -73,6 +73,16 @@ async function prikaziSlike() {
       console.error('Greška prilikom dohvaćanja slika:', error);
     }
   }
+
+  function provjeriPrikazPrijenosa(){
+    const token = localStorage.getItem("token");
+    if (token==null){
+      const image_uploadForm = document.getElementById('image_upload');
+      image_uploadForm.style.display="none";
+    }
+  }
+
+  provjeriPrikazPrijenosa();
   
   prikaziSlike(); 
   
