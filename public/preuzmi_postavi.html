@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/ruta/postavi.js"></script>
   <link rel="stylesheet" type="text/css" href="/style.css">
   <title>Prikaz Slika</title>
 </head>
@@ -33,7 +34,7 @@
     <h3>#preuzmisliku #ostavisliku </h3>
 
   <div id="slike-container"></div>
-  <form action="/upload" method="post" enctype="multipart/form-data">
+  <form id="image_upload">
     <label for="image">Izaberite sliku:</label>
     <input type="file" name="image" id="image" accept="image/*" required>
     <button type="submit">Upload Slike</button>
